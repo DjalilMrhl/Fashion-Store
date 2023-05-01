@@ -1,0 +1,27 @@
+.carousel-root {
+    > div {
+        position: relative;
+        img {
+            height: calc(100vmin - 7rem);
+            object-fit: cover;
+        }
+        .wrapper {
+            font-size: clamp(.8rem, 3vw, 2rem);
+            text-align: left;
+            position: absolute;
+            top: 30%;
+            left: 20%;
+            padding: 1em;
+            color: var(--primary-400);
+            background-color: rgba(0, 0, 0, 0.5);
+            h1 {
+                color: #fff;
+                font-family: "Cinzel";
+                font-size: clamp(1.5rem, 3vw, 2.5rem);
+            }
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+}

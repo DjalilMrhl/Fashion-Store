@@ -1,0 +1,67 @@
+.product {
+  width: 100%;
+  padding: 10rem 1rem 2rem;
+}
+.product--container {
+  width: min(100%, 90rem);
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+}
+@media screen and (max-width: 430px) {
+  .product--container {
+    flex-wrap: wrap;
+  }
+}
+.product--container img {
+  width: 50%;
+}
+@media screen and (max-width: 430px) {
+  .product--container img {
+    width: 100%;
+  }
+}
+.product--container .content {
+  width: 50%;
+}
+@media screen and (max-width: 430px) {
+  .product--container .content {
+    width: 100%;
+  }
+}
+.product--container .content h1 {
+  font-family: "Cinzel";
+  font-weight: 400;
+}
+.product--container .content > span {
+  display: inline-block;
+  margin-block: 1rem 3rem;
+}
+.product--container .content p {
+  margin-bottom: 2rem;
+}
+.product--container .content .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.product--container .content .wrapper .count {
+  width: 10rem;
+  height: 4rem;
+  padding: 0.5rem;
+  border: 2px solid slategray;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product--container .content .wrapper span {
+  color: slategray;
+}
+.product--container .content .wrapper .MuiButtonBase-root {
+  font-size: 1.4rem;
+  background-color: #000;
+  color: #fff;
+}
+.product--container .content .wrapper .MuiButtonBase-root:hover {
+  background-color: slategray;
+}/*# sourceMappingURL=Product.css.map */

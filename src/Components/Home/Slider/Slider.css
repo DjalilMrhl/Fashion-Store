@@ -1,0 +1,26 @@
+.carousel-root > div {
+  position: relative;
+}
+.carousel-root > div img {
+  height: calc(100vmin - 7rem);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.carousel-root > div .wrapper {
+  font-size: clamp(0.8rem, 3vw, 2rem);
+  text-align: left;
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  padding: 1em;
+  color: var(--primary-400);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.carousel-root > div .wrapper h1 {
+  color: #fff;
+  font-family: "Cinzel";
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+.carousel-root > div .wrapper a {
+  text-decoration: underline;
+}/*# sourceMappingURL=Slider.css.map */

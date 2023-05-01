@@ -1,0 +1,61 @@
+.product {
+    width: 100%;
+    padding: 10rem 1rem 2rem;
+    &--container {
+        width: min(100%, 90rem);
+        margin: 0 auto;
+        display: flex;
+        gap: 2rem;
+        @media screen and (max-width: 430px) {
+            flex-wrap: wrap;
+        }
+        img {
+            width: 50%;
+            @media screen and (max-width: 430px) {
+                width: 100%;
+            }
+        }
+        .content {
+            width: 50%;
+            @media screen and (max-width: 430px) {
+                width: 100%;
+            }
+            h1 {
+                font-family: "Cinzel";
+                font-weight: 400;
+            }
+            > span {
+                display: inline-block;
+                margin-block: 1rem 3rem;
+            }
+            p {
+                margin-bottom: 2rem;
+            }
+            .wrapper {
+                display: flex;
+                justify-content: space-between;
+                .count {
+                    width: 10rem;
+                    height: 4rem;
+                    padding: 0.5rem;
+                    border: 2px solid slategray;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                span {
+                    color: slategray;
+                }
+                .MuiButtonBase-root {
+                    font-size: 1.4rem;
+                    background-color: #000;
+                    color: #fff;
+                    &:hover {
+                        background-color: slategray;
+                    }
+                }
+            }
+            }
+    }
+}

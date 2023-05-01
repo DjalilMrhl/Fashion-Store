@@ -1,0 +1,52 @@
+.menu {
+    position: fixed;
+    right: 0;
+    z-index: 125;
+    width: min(100%, 40rem);
+    height: 100vh;
+    padding: 1rem;
+    background-color: #fff;
+    color: #000;
+    > *:first-child {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        font-size: 3rem;
+    }
+    .modal {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 40rem;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    &--container {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        svg {
+            margin-block: 5rem;
+            font-size: 10rem;
+            color: slategray;
+        }
+        h2 {
+            margin-block: 1rem;
+        }
+        h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .hr {
+            align-self: stretch;
+        }
+        p, a {
+            margin-block: 1rem;
+            cursor: pointer;
+            color: slategray;
+        }
+    }
+}

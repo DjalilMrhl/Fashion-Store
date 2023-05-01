@@ -1,0 +1,59 @@
+.newsletter {
+    width: 100%;
+    padding: 6rem 1rem 1rem;
+    &--container {
+        text-align: center;
+        > :first-child {
+            font-size: 3rem;
+            color: slategray;
+        }
+        h1 {
+            text-transform: uppercase;
+            font-family: "Cinzel";
+            font-weight: 300;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            margin-bottom: 2rem;
+        }
+        .cta {
+            width: min(90%, 70rem);
+            margin: 0 auto;
+            position: relative;
+            input {
+                width: 100%;
+                padding: 1rem;
+                outline: 0;
+                border: none;
+                background-color: #d4d3d36d;
+                &::placeholder {
+                    font-family: "Fauna One";
+                }
+            }
+            .MuiButtonBase-root {
+                position: relative;
+                font-family: "Fauna One";
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                border-radius: 5px;
+                border: none;
+                color: slategray;
+                &::before {
+                    content: "";
+                    display: block;
+                    width: .4px;
+                    height: 2rem;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    border-radius: 5px;
+                    background-color: slategray;
+                }
+            }
+        }
+    }
+}

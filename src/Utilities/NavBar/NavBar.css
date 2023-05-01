@@ -1,0 +1,43 @@
+.nav {
+  width: 100%;
+  min-height: 7rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #fff;
+  color: #000;
+}
+.nav--container {
+  width: min(100%, 90rem);
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav--container > a {
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+}
+.nav--container ul {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.3em;
+       column-gap: 0.3em;
+}
+.nav--container ul .MuiButtonBase-root {
+  padding: 0.5em;
+}
+.nav--container ul .MuiButtonBase-root svg {
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+.nav--container ul .MuiBadge-badge {
+  font-size: clamp(1rem, 3vw, 1.6rem);
+  top: 5px;
+  right: 5px;
+  background: red;
+  color: #fff;
+}/*# sourceMappingURL=NavBar.css.map */

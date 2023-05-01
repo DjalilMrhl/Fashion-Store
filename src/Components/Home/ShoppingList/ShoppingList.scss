@@ -1,0 +1,110 @@
+.shopping-list {
+    width: 100%;
+    padding: 8rem 1rem 1rem;
+    &--container {
+        width: 100%;
+        margin: 0 auto;
+        > h1 {
+            text-align: center;
+            font-family: "Cinzel";
+            font-weight: 200;
+            margin-bottom: 2rem;
+        }
+        .MuiTabs-flexContainer {
+            flex-wrap: wrap;
+            .btn {
+                font-size: 1.6rem;
+                text-transform: capitalize;
+                font-family: "Fauna One";
+                color: slategray;
+            }
+        }
+        .MuiTabs-indicator {
+            background-color: #000;
+        }
+        .cards {
+            overflow-y: scroll;
+            width: min(100%, 90rem);
+            height: 80vh;
+            margin: 2rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 20rem);
+            justify-content: center;
+            gap: 2rem;
+            .card {
+                min-height: 50rem;
+                display: flex;
+                flex-direction: column;
+                &:hover {
+                    .wrapper, .view{
+                        transform: translateY(0) !important;
+                    }
+                }
+                .image {
+                    overflow: hidden;
+                    width: 100%;
+                    position: relative;
+                    margin-bottom: 1rem;
+                    img {
+                        height: 30rem;
+                        object-fit: cover;
+                    }
+                    .view {
+                        cursor: pointer;
+                        font-size: 1.3rem;
+                        position: absolute;
+                        top: 1rem;
+                        right: 1rem;
+                        transform: translateY(-200%);
+                        border-radius: 5px;
+                        background-color: slategray;
+                        color: #fff;
+                        transition: all .4s;
+                    }
+                    .wrapper {
+                        width: 100%;
+                        display: flex;
+                        align-items: flex-end;
+                        justify-content: space-between;
+                        position: absolute;
+                        bottom: 1rem;
+                        transform: translateY(200%);
+                        transition: all 0.4s;
+                        .count {
+                            width: 7rem;
+                            height: 3rem;
+                            padding: 0.5rem;
+                            background-color:slategray;
+                            border-radius: 5px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                        }
+                        .MuiButton-root {
+                            padding: 0.2rem;
+                            width: 8rem;
+                            height: 3rem;
+                            background-color: #000;
+                            color: #fff;
+                        }
+                    }
+                }
+                > p:first-of-type {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-block: 0.5rem 1rem;
+                    span {
+                        color: slategray;
+                    }
+                }
+                h3 {
+                    font-size: 2rem;
+                    margin-bottom: 1rem;
+                }
+                p {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}

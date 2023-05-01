@@ -1,0 +1,58 @@
+.footer {
+  width: 100%;
+  min-height: 30rem;
+  padding: 2rem;
+  background-color: #e6e8ea;
+  display: flex;
+  align-items: center;
+}
+.footer--container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: first baseline;
+  justify-content: space-between;
+  gap: 2rem;
+}
+@media screen and (max-width: 580px) {
+  .footer--container {
+    justify-content: space-evenly;
+  }
+}
+@media screen and (max-width: 493px) {
+  .footer--container {
+    flex-direction: column;
+  }
+}
+.footer--container > h1 {
+  font-size: 3rem;
+  align-self: center;
+}
+@media screen and (max-width: 493px) {
+  .footer--container .ul {
+    text-align: center;
+    width: 100%;
+  }
+}
+.footer--container .ul h1 {
+  font-family: "Cinzel";
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 493px) {
+  .footer--container .ul ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+  }
+  .footer--container .ul ul li {
+    border-right: 1px solid #000;
+    padding-right: 0.4rem;
+  }
+}
+.footer--container .ul li {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}/*# sourceMappingURL=Footer.css.map */

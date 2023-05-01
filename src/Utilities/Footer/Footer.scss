@@ -1,0 +1,54 @@
+.footer {
+    width: 100%;
+    min-height: 30rem;
+    padding: 2rem;
+    background-color: #e6e8ea;
+    display: flex;
+    align-items: center;
+    &--container {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: first baseline;
+        justify-content: space-between;
+        @media screen and (max-width: 580px) {
+            justify-content: space-evenly;
+        }
+        @media screen and (max-width: 493px) {
+            flex-direction: column;
+        }
+        gap: 2rem;
+        > h1{
+            font-size: 3rem;
+            align-self: center;
+        }
+        .ul {
+            @media screen and (max-width: 493px) {
+                text-align: center;
+                width: 100%;
+            }
+            h1 {
+                font-family: "Cinzel";
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            ul {
+                @media screen and (max-width: 493px) {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: .7rem;
+                    li {
+                        border-right: 1px solid #000;
+                        padding-right: 0.4rem;
+                    }
+                }
+            }
+            li {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

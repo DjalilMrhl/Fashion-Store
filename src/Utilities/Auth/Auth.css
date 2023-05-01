@@ -1,0 +1,81 @@
+.auth {
+  position: fixed;
+  right: 0;
+  z-index: 125;
+  width: min(100%, 40rem);
+  height: 100vh;
+  padding: 1rem;
+  background-color: #fff;
+  color: #000;
+}
+@media screen and (max-width: 425px) {
+  .auth {
+    padding: 0.5rem;
+  }
+}
+.auth > *:first-child {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 3rem;
+}
+.auth .modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 40rem;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.auth--container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.auth--container > * {
+  width: 100%;
+}
+.auth--container .photo {
+  cursor: pointer;
+  width: 60%;
+  margin-block: 5rem;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.auth--container .photo img {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+.auth--container .photo svg {
+  font-size: 10rem;
+  color: slategray;
+}
+.auth--container .MuiInputBase-root {
+  margin-bottom: 1rem;
+}
+.auth--container .MuiButtonBase-root {
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  background-color: #000;
+  color: #fff;
+}
+.auth--container .MuiButtonBase-root:hover {
+  background-color: slategray;
+}
+.auth--container .MuiTypography-root {
+  margin-block: 0.5rem 1rem;
+  color: red;
+}
+.auth--container p span {
+  margin-left: 1rem;
+  cursor: pointer;
+  color: slategray;
+  font-family: "Cinzel";
+  text-decoration: underline;
+}/*# sourceMappingURL=Auth.css.map */

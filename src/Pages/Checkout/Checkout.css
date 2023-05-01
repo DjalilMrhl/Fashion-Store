@@ -1,0 +1,93 @@
+.checkout {
+  width: 100%;
+  padding: 7rem 1rem 1rem;
+}
+.checkout--container {
+  width: 100%;
+  margin: 0 auto;
+}
+.checkout--container .MuiStepper-root {
+  margin: 4rem auto;
+}
+.checkout--container .MuiStepper-root * {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+}
+.checkout--container .MuiStepper-root .Mui-active {
+  color: #000;
+}
+.checkout--container form {
+  width: min(100%, 100rem);
+  height: 100%;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.checkout--container form h1 {
+  margin-bottom: 2rem;
+}
+.checkout--container form .inputs {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.checkout--container form .inputs > :first-child, .checkout--container form .inputs :nth-child(2) {
+  grid-column: span 2;
+}
+@media screen and (max-width: 425px) {
+  .checkout--container form .inputs > :first-child, .checkout--container form .inputs :nth-child(2) {
+    grid-column: span 4;
+  }
+}
+.checkout--container form .inputs > :nth-child(3) {
+  grid-column: 1/-1;
+}
+@media screen and (max-width: 425px) {
+  .checkout--container form .inputs > :nth-child(3) {
+    grid-column: span 4;
+  }
+}
+.checkout--container form .inputs > :nth-child(4), .checkout--container form .inputs :nth-child(5) {
+  grid-column: span 2;
+}
+@media screen and (max-width: 425px) {
+  .checkout--container form .inputs > :nth-child(4), .checkout--container form .inputs :nth-child(5) {
+    grid-column: span 4;
+  }
+}
+.checkout--container form .inputs > :nth-child(6) {
+  grid-column: span 2;
+}
+@media screen and (max-width: 425px) {
+  .checkout--container form .inputs > :nth-child(6) {
+    grid-column: span 4;
+  }
+}
+.checkout--container form .inputs > :nth-child(7), .checkout--container form .inputs :nth-child(8) {
+  grid-column: span 1;
+}
+@media screen and (max-width: 425px) {
+  .checkout--container form .inputs > :nth-child(7), .checkout--container form .inputs :nth-child(8) {
+    grid-column: span 4;
+  }
+}
+.checkout--container form .contact {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.checkout--container form #isSameAddress {
+  margin-block: 3rem;
+  margin-right: 1rem;
+}
+.checkout--container form .MuiButtonBase-root {
+  width: 100%;
+  margin-top: 2rem;
+  background-color: #000;
+  color: #fff;
+}
+.checkout--container form .btns {
+  display: flex;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}/*# sourceMappingURL=Checkout.css.map */

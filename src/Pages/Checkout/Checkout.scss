@@ -1,0 +1,82 @@
+.checkout {
+    width: 100%;
+    padding: 7rem 1rem 1rem;
+    &--container {
+        width: 100%;
+        margin: 0 auto;
+        .MuiStepper-root {
+            margin: 4rem auto;
+            * {
+                font-size: clamp(1.2rem, 3vw, 2rem);
+            }
+            .Mui-active {
+                color: #000;
+            }
+        }
+        form {
+            width: min(100%, 100rem);
+            height: 100%;
+            margin: 0 auto 3rem;
+            display: flex;
+            flex-direction: column;
+            h1 {
+                margin-bottom: 2rem;
+            }
+            .inputs {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+                gap: 1rem;
+                > :first-child, :nth-child(2) {
+                    grid-column: span 2;
+                    @media screen and (max-width: 425px) {
+                        grid-column: span 4;
+                    }
+                }
+                > :nth-child(3) {
+                    grid-column: 1/-1;
+                    @media screen and (max-width: 425px) {
+                        grid-column: span 4;
+                    }
+                }
+                > :nth-child(4), :nth-child(5) {
+                    grid-column: span 2;
+                    @media screen and (max-width: 425px) {
+                        grid-column: span 4;
+                    }
+                }
+                > :nth-child(6) {
+                    grid-column: span 2;
+                    @media screen and (max-width: 425px) {
+                        grid-column: span 4;
+                    }
+                }
+                > :nth-child(7),:nth-child(8) {
+                    grid-column: span 1;
+                    @media screen and (max-width: 425px) {
+                        grid-column: span 4;
+                    }
+                }
+            }
+            .contact {
+                display: flex;
+                flex-direction: column;
+                row-gap: 2rem;
+            }
+            #isSameAddress {
+                margin-block: 3rem;
+                margin-right: 1rem;
+            }
+            .MuiButtonBase-root {
+                width: 100%;
+                margin-top: 2rem;
+                background-color: #000;
+                color: #fff;
+            }
+            .btns {
+                display: flex;
+                column-gap: 2rem;
+            }
+        }
+    }
+}

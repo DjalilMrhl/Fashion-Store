@@ -1,0 +1,6 @@
+export {default as NavBar} from './NavBar/NavBar'
+export {default as NotFound} from './NotFound/NotFound'
+export {default as CartMenu} from './CartMenu/CartMenu'
+export {default as Footer} from './Footer/Footer'
+export {default as Auth} from './Auth/Auth'
+export {default as SideMenu} from './SideMenu/SideMenu'

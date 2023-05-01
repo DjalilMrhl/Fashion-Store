@@ -1,0 +1,62 @@
+.newsletter {
+  width: 100%;
+  padding: 6rem 1rem 1rem;
+}
+.newsletter--container {
+  text-align: center;
+}
+.newsletter--container > :first-child {
+  font-size: 3rem;
+  color: slategray;
+}
+.newsletter--container h1 {
+  text-transform: uppercase;
+  font-family: "Cinzel";
+  font-weight: 300;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.newsletter--container p {
+  margin-bottom: 2rem;
+}
+.newsletter--container .cta {
+  width: min(90%, 70rem);
+  margin: 0 auto;
+  position: relative;
+}
+.newsletter--container .cta input {
+  width: 100%;
+  padding: 1rem;
+  outline: 0;
+  border: none;
+  background-color: rgba(212, 211, 211, 0.4274509804);
+}
+.newsletter--container .cta input::-moz-placeholder {
+  font-family: "Fauna One";
+}
+.newsletter--container .cta input::placeholder {
+  font-family: "Fauna One";
+}
+.newsletter--container .cta .MuiButtonBase-root {
+  position: relative;
+  font-family: "Fauna One";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  border-radius: 5px;
+  border: none;
+  color: slategray;
+}
+.newsletter--container .cta .MuiButtonBase-root::before {
+  content: "";
+  display: block;
+  width: 0.4px;
+  height: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border-radius: 5px;
+  background-color: slategray;
+}/*# sourceMappingURL=NewsLetter.css.map */
