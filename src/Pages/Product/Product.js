@@ -28,7 +28,7 @@ function Product() {
   return (
     <main className="product" id="product">
         <div className="product--container">
-        <img src={`http://localhost:1337${product?.attributes?.thumbnail?.data?.attributes?.formats?.small?.url}`} alt=""/>
+        <img src={`https://strapi-4yf5.onrender.com${product?.attributes?.thumbnail?.data?.attributes?.formats?.small?.url}`} alt=""/>
             <div className="content">
                 <h1>{product?.attributes?.title}</h1>
                 <span>${product?.attributes?.price}</span>
