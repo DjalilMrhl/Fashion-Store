@@ -51,7 +51,7 @@ function ShoppingList() {
             ? products?.map((item) => (
                   <div className="card" key={item.id}>
                     <div className="image">
-                      <img src={`http://localhost:1337${item.attributes.thumbnail.data?.attributes?.formats?.small?.url}`} alt=""/>
+                      <img src={`https://strapi-4yf5.onrender.com${item.attributes.thumbnail.data?.attributes?.formats?.small?.url}`} alt=""/>
                       <span className="view" onClick={()=> navigate(`/products/${item.id}`)}>view product</span>
                       <div className="wrapper">
                         <div className="wrapper">
@@ -75,7 +75,7 @@ function ShoppingList() {
             : filter?.map((item) => (
                   <div className="card" key={item.id}>
                     <div className="image">
-                      <img src={`http://localhost:1337${item.attributes.thumbnail.data?.attributes?.formats?.small?.url}`} alt=""/>
+                      <img src={`https://strapi-4yf5.onrender.com${item.attributes.thumbnail.data?.attributes?.formats?.small?.url}`} alt=""/>
                       <span className="view" onClick={()=> navigate(`/products/${item.id}`)}>view product</span>
                       <div className="wrapper">
                         <div className="wrapper">
