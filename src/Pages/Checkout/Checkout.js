@@ -51,7 +51,7 @@ function Checkout() {
                     })),
                   };
                   console.log(requestBody);
-                  const res = await fetch("http://localhost:1337/api/orders", {
+                  const res = await fetch("https://strapi-4yf5.onrender.com/api/orders", {
                     method: "POST",
                     headers: { "Content-Type": "application/json",
                     Authorization: "Bearer "+token
