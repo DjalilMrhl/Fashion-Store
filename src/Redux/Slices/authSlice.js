@@ -15,7 +15,7 @@ const initialState = {
 export const loginUser = createAsyncThunk("auth/loginUser",
         async(form, {rejectWithValue})=> {
             try {
-                const res = await axios.post("http://localhost:1337/api/auth/local",
+                const res = await axios.post("https://strapi-4yf5.onrender.com/api/auth/local",
                 {
                     identifier: form.name,
                     password: form.password
@@ -31,7 +31,7 @@ export const uploadPhoto = createAsyncThunk("auth/uploadPhoto",
             const formData = new FormData()
             formData.append({ref: "plugin::users-permissions.user", refId: id, field: "photo", files: file})
             try {
-                const res = await fetch("http://localhost:1337/api/upload",{
+                const res = await fetch("https://strapi-4yf5.onrender.com/api/upload",{
                     body: formData
                 })
                 return res.data;
@@ -42,7 +42,7 @@ export const uploadPhoto = createAsyncThunk("auth/uploadPhoto",
 export const registerUser = createAsyncThunk("auth/registerUser",
         async(form, {rejectWithValue})=> {
             try {
-                const res = await axios.post("http://localhost:1337/api/auth/local/register",
+                const res = await axios.post(https://strapi-4yf5.onrender.com/api/auth/local/register",
                 {
                     username: form.name,
                     email: form.email,
