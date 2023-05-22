@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const productsAPI = createApi({
     reducerPath: "product",
-    baseQuery: fetchBaseQuery({baseUrl: "http://localhost:1337/api"}),
+    baseQuery: fetchBaseQuery({baseUrl: "https://strapi-4yf5.onrender.com/api"}),
     endpoints: builder => ({
         getAllProducts: builder.query({
             query: ()=> "/products?populate=thumbnail"
