@@ -1,17 +1,15 @@
 import './CartMenu.css'
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { decreaseQuantity, increaseQuantity, removefromCart } from '../../Redux/Slices/cartSlice'
+import React, { useContext } from 'react'
 import {Button, Divider, IconButton} from '@mui/material'
 import {Close, Add, Remove } from '@mui/icons-material'
 import { useNavigate } from 'react-router'
+import { CartContext } from '../../Context/context'
 
 function CartMenu({cartMenuOpen,setCartMenuOpen, setAuthOpen}) {
 
     const navigate = useNavigate()
-    const cart = useSelector(state=> state.cart)
+    const {cartItems, cartTotalPrice} = useContext(CartContext)
     const isLoggedIn = useSelector(state=> state.auth.isLoggedIn)
-    const dispatch = useDispatch()
 
     const handleClick = ()=> {
         if (isLoggedIn) {
@@ -24,7 +22,7 @@ function CartMenu({cartMenuOpen,setCartMenuOpen, setAuthOpen}) {
     }
 
   return (
-    cart.cartItems.length === 0?
+    cartItems.length === 0?
     (cartMenuOpen &&
     <aside className="cart-menu" id="cart-menu">
         <span className='modal'></span>
@@ -38,24 +36,24 @@ function CartMenu({cartMenuOpen,setCartMenuOpen, setAuthOpen}) {
     <aside className="cart-menu" id="cart-menu">
         <span className='modal' onClick={()=> setCartMenuOpen(false)}></span>
         <div className="header">
-            <h1>Shopping Cart ({cart.cartItems.length})</h1>
+            <h1>Shopping Cart ({cartItems.length})</h1>
             <Close onClick={()=> setCartMenuOpen(false)}/>                
         </div>
         <div className="cart-menu--container">
-            {cart.cartItems.map(item=>
+            {cartItems.map(item=>
             <div className="card" key={item.id}>
-                <IconButton onClick={()=> dispatch(removefromCart(item))}><Close/></IconButton>
-                <img src={`http://localhost:1337${item.attributes.thumbnail.data?.attributes?.formats?.small?.url}`} alt={item.attributes.title} />
+                <IconButton onClick={()=> removefromCart(item)}><Close/></IconButton>
+                <img src={`item.thumbnail`} alt={item.title} />
                 <div className="card_content">
-                    <h2>{item.attributes.title}</h2>
-                    <p>{item.attributes.description}</p>
+                    <h2>{item.title}</h2>
+                    <p>{item.description}</p>
                     <div className="wrapper">
                         <div className="count">
-                            <Remove onClick={()=> item.cartQuantity > 1 && dispatch(decreaseQuantity(item))}/>
+                            <Remove onClick={()=> item.cartQuantity > 1 && decreaseQuantity(item)}/>
                             <span>{item.cartQuantity}</span>
-                            <Add onClick={()=> dispatch(increaseQuantity(item))}/>
+                            <Add onClick={()=> increaseQuantity(item)}/>
                         </div>
-                        <span>${item.attributes.price}</span>
+                        <span>${item.price}</span>
                     </div>
                 </div>
             </div>
@@ -63,7 +61,7 @@ function CartMenu({cartMenuOpen,setCartMenuOpen, setAuthOpen}) {
             <Divider className='hr'/>
             <div className="subtotal">
                 <p>SUBTOTAL</p>
-                <span>${cart.cartTotalPrice}</span>
+                <span>${cartTotalPrice}</span>
             </div>
             {isLoggedIn?<Button variant='' onClick={handleClick}>Checkout</Button>:<Button variant='' style={{backgroundColor: "slategray"}} onClick={handleClick}>Login to Checkout</Button>}
         </div>
