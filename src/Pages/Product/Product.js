@@ -28,7 +28,7 @@ function Product() {
   return (
     <main className="product" id="product">
         <div className="product--container">
-        <img src={item.thumbnail} alt=""/>
+        <img src={product.thumbnail} alt=""/>
             <div className="content">
                 <h1>{product?.title}</h1>
                 <span>${product?.price}</span>
