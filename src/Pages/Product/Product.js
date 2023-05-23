@@ -1,26 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import './Product.scss'
-import { addToCart } from '../../Redux/Slices/cartSlice'
-import { useDispatch } from 'react-redux'
 import { Button } from '@mui/material'
 import { Add, Remove } from '@mui/icons-material'
 import { useParams } from 'react-router'
-import { useGetProductQuery } from '../../Redux/API/ProductsAPI'
+import {products} from './../../../data'
+
 
 function Product() {
 
     const {id} = useParams()
-    const dispatch = useDispatch()
-    const {data = []} = useGetProductQuery(id)
-    const {data: product = []} = data
+    const [product, setProduct] = useState({})
     const [cartQuantity, setCartQuantity] = useState(1)
 
     useEffect(() => {
       window.scrollTo(0,0)
+      setProduct(products.filter(item=> item.id === id))
     }, [])
 
     const handleAddToCart = () => {
-      dispatch(addToCart({...product, cartQuantity}))
+      addToCart({...product, cartQuantity})
       console.log({...product, cartQuantity});
       setCartQuantity(1)
     }
@@ -28,11 +26,11 @@ function Product() {
   return (
     <main className="product" id="product">
         <div className="product--container">
-        <img src={`https://strapi-4yf5.onrender.com${product?.attributes?.thumbnail?.data?.attributes?.formats?.small?.url}`} alt=""/>
+        <img src={item.thumbnail} alt=""/>
             <div className="content">
-                <h1>{product?.attributes?.title}</h1>
-                <span>${product?.attributes?.price}</span>
-                <p>{product?.attributes?.description}.</p>
+                <h1>{product?.title}</h1>
+                <span>${product?.price}</span>
+                <p>{product?.description}.</p>
                 <div className="wrapper">
                   <div className="count">
                     <Remove onClick={()=> cartQuantity > 1 && setCartQuantity(prev=> prev-1)}/>

@@ -3,11 +3,11 @@ import "./NavBar.scss";
 import { Badge, IconButton } from '@mui/material'
 import {PersonOutline, ShoppingBagOutlined, MenuOutlined, SearchOutlined} from '@mui/icons-material'
 import { Link } from 'react-router-dom'
-import { useSelector } from "react-redux";
+import { CartContext } from "../../Context/context";
 
 function NavBar({setCartMenuOpen, setAuthOpen, setMenuOpen}) {
 
-  const cartTotalQuantity = useSelector(state=> state.cart.cartTotalQuantity)
+  const {cartTotalQuantity} = useContext(CartContext)
   const isLoggedIn = useSelector(state=> state.auth.isLoggedIn)
 
   return (

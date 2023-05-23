@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import "./ShoppingList.scss";
 import { useNavigate } from 'react-router-dom'
 import { Button, Tab, Tabs } from "@mui/material";
-import { useGetAllProductsQuery } from "../../../Redux/API/ProductsAPI";
-import { addToCart } from "../../../Redux/Slices/cartSlice";
-import { useDispatch } from "react-redux";
 import { Add, Remove } from "@mui/icons-material";
+import {products} from './../../../data'
 
 function ShoppingList() {
   const [active, setActive] = useState(0);
@@ -13,24 +11,20 @@ function ShoppingList() {
   const [cartQuantity, setCartQuantity] = useState(1)
   const [values, setValues] = useState(0)
   const navigate = useNavigate()
-  const dispatch = useDispatch()
-
-  const { data = {} } = useGetAllProductsQuery();
-  const { data: products = [] } = data;
 
   const categories = [
     "all",
-    ...new Set(products.map((item) => item.attributes.category)),
+    ...new Set(products.map((item) => item.category)),
   ];
 
   const handleFilter = (category, index) => {
     setActive(index);
     setValues(index)
     console.log(values);
-    setFilter(products.filter((item) => item.attributes.category === category));
+    setFilter(products.filter((item) => item.category === category));
   }
   const handleAddToCart = (item) => {
-    dispatch(addToCart({...item,cartQuantity}))
+    addToCart({...item,cartQuantity})
     console.log({...item,cartQuantity});
     setCartQuantity(1)
   }
@@ -51,7 +45,7 @@ function ShoppingList() {
             ? products?.map((item) => (
                   <div className="card" key={item.id}>
                     <div className="image">
-                      <img src={`https://strapi-4yf5.onrender.com${item.attributes.thumbnail.data?.attributes?.formats?.small?.url}`} alt=""/>
+                      <img src={item.thumbnail} alt=""/>
                       <span className="view" onClick={()=> navigate(`/products/${item.id}`)}>view product</span>
                       <div className="wrapper">
                         <div className="wrapper">
@@ -65,17 +59,17 @@ function ShoppingList() {
                       </div>
                     </div>
                     <p>
-                      <span>{item.attributes.category}</span>
-                      <span>${item.attributes.price}</span>
+                      <span>{item.category}</span>
+                      <span>${item.price}</span>
                     </p>
-                    <h3>{item.attributes.title}</h3>
-                    <p>{item.attributes.description}</p>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
                   </div>
               ))
             : filter?.map((item) => (
                   <div className="card" key={item.id}>
                     <div className="image">
-                      <img src={`https://strapi-4yf5.onrender.com${item.attributes.thumbnail.data?.attributes?.formats?.small?.url}`} alt=""/>
+                      <img src={item.thumbnail} alt=""/>
                       <span className="view" onClick={()=> navigate(`/products/${item.id}`)}>view product</span>
                       <div className="wrapper">
                         <div className="wrapper">
@@ -89,11 +83,11 @@ function ShoppingList() {
                       </div>
                     </div>
                     <p>
-                      <span>{item.attributes.category}</span>
-                      <span>${item.attributes.price}</span>
+                      <span>{item.category}</span>
+                      <span>${item.price}</span>
                     </p>
-                    <h3>{item.attributes.title}</h3>
-                    <p>{item.attributes.description}</p>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
                   </div>
               ))}
         </div>

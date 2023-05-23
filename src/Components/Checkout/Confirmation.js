@@ -1,14 +1,13 @@
 import { Box, AlertTitle, Alert } from "@mui/material";
-import { useDispatch } from "react-redux";
-import { clearCart } from "../../Redux/Slices/cartSlice";
 import { useEffect } from "react";
+import { CartContext } from "../../Context/context";
 
 
 const Confirmation = () => {
 
-  const dispatch = useDispatch()
+  const {clearCart} = useContext(CartContext)
   useEffect(() => {
-    dispatch(clearCart())
+    clearCart()
   }, [dispatch])
   
 

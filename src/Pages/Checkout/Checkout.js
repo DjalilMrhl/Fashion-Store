@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Checkout.scss";
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { Button, Step, StepLabel, Stepper, TextField } from "@mui/material";
 import { Billing, Shipping } from "../../Components";
 import { loadStripe } from "@stripe/stripe-js";
+import { CartContext } from "../../Context/context";
 
 const stripePromise = loadStripe(
   "pk_test_51MtWkhBx5TEHq8kdA9k3PEeq0HYl7R0FovVIPQisKQkkolftDlWp8LijISiLesoWTC9s0k5yDN90UEasbf0bU2cp000XV2XJYL"
@@ -13,7 +14,7 @@ const stripePromise = loadStripe(
 
 function Checkout() {
   const [step, setStep] = useState(0);
-  const cart = useSelector((state) => state.cart);
+  const {cartItems} = useContext(CartContext);
   const token = useSelector((state) => state.auth.token);
 
   useEffect(() => {
@@ -45,7 +46,7 @@ function Checkout() {
                   const requestBody = {
                     userName: [values.firstName, values.lastName].join(" "),
                     email: values.email,
-                    products: cart.cartItems.map((item) => ({
+                    products: cartItems.map((item) => ({
                       id: item.id,
                       cartQuantity: item.cartQuantity,
                     })),
