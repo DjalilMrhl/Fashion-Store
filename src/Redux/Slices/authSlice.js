@@ -42,7 +42,7 @@ export const uploadPhoto = createAsyncThunk("auth/uploadPhoto",
 export const registerUser = createAsyncThunk("auth/registerUser",
         async(form, {rejectWithValue})=> {
             try {
-                const res = await axios.post(https://strapi-4yf5.onrender.com/api/auth/local/register",
+                const res = await axios.post("https://strapi-4yf5.onrender.com/api/auth/local/register",
                 {
                     username: form.name,
                     email: form.email,
