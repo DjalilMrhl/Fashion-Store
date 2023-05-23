@@ -4,6 +4,7 @@ import { Button } from '@mui/material'
 import { Add, Remove } from '@mui/icons-material'
 import { useParams } from 'react-router'
 import {products} from './../../data'
+import { CartContext } from '../../Context/context'
 
 
 function Product() {
@@ -11,6 +12,7 @@ function Product() {
     const {id} = useParams()
     const [product, setProduct] = useState({})
     const [cartQuantity, setCartQuantity] = useState(1)
+    const {addToCart} = useContext(CartContext)
 
     useEffect(() => {
       window.scrollTo(0,0)
