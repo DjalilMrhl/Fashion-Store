@@ -11,9 +11,9 @@ import Img10 from "./assets/small_faith_yarn_j_X2cnt_Cbr_Ao_unsplash_eb31ead891.
 import Img11 from "./assets/small_florencia_simonini_PDZAM_Yvdu_Vk_unsplash_fecb4ec178.jpeg";
 import Img12 from "./assets/small_kai_gabriel_2s3_Ghh_Jz2u_Y_unsplash_828c9e4caf.jpeg";
 import Img13 from "./assets/small_kevin_gil_musngi_e_Cik_Wiy_Y6_IY_unsplash_49c17c3259.jpeg";
-import Img14 from "./assets/small_laura_chouette_LX_Hy_Nuf_B8_Ds_unsplash_40ef4fa3ef.jpeg
-import Img15 from "./assets/small_laura_chouette_q4_Wrsho_t2_E_unsplash_8eb0bfddd0.jpeg
-import Img16 from "./assets/small_mohamad_javad_barakouhi_r_Jvs1om1_G0o_unsplash_0280eb26ce.jpeg
+import Img14 from "./assets/small_laura_chouette_LX_Hy_Nuf_B8_Ds_unsplash_40ef4fa3ef.jpeg"
+import Img15 from "./assets/small_laura_chouette_q4_Wrsho_t2_E_unsplash_8eb0bfddd0.jpeg"
+import Img16 from "./assets/small_mohamad_javad_barakouhi_r_Jvs1om1_G0o_unsplash_0280eb26ce.jpeg"
 import Img17 from "./assets/small_mzz50622_black_xl_2a843e0ff8.jpeg";
 import Img18 from "./assets/small_mohammad_faruque_0_ZY_Pu_n_L_Ow_U_unsplash_1756aac3c6.jpeg";
 import Img19 from "./assets/small_mzz50622_black_xl_2a843e0ff8.jpeg";
