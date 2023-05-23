@@ -8,7 +8,7 @@ const Confirmation = () => {
   const {clearCart} = useContext(CartContext)
   useEffect(() => {
     clearCart()
-  }, [])
+  }, [clearCart])
   
 
   return (

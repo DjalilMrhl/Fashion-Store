@@ -17,7 +17,7 @@ function Product() {
     useEffect(() => {
       window.scrollTo(0,0)
       setProduct(products.filter(item=> item.id === id))
-    }, [])
+    }, [id])
 
     const handleAddToCart = () => {
       addToCart({...product, cartQuantity})
