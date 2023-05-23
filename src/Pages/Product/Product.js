@@ -3,7 +3,7 @@ import './Product.scss'
 import { Button } from '@mui/material'
 import { Add, Remove } from '@mui/icons-material'
 import { useParams } from 'react-router'
-import {products} from './../../../data'
+import {products} from './../../data'
 
 
 function Product() {
