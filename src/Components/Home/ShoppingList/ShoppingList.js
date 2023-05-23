@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Button, Tab, Tabs } from "@mui/material";
 import { Add, Remove } from "@mui/icons-material";
 import {products} from './../../../data'
+import { CartContext } from "../../../Context/context";
 
 function ShoppingList() {
   const [active, setActive] = useState(0);
@@ -11,6 +12,7 @@ function ShoppingList() {
   const [cartQuantity, setCartQuantity] = useState(1)
   const [values, setValues] = useState(0)
   const navigate = useNavigate()
+  const {addToCart} = useContext(CartContext)
 
   const categories = [
     "all",

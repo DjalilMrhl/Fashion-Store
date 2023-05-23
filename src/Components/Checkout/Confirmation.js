@@ -1,5 +1,5 @@
 import { Box, AlertTitle, Alert } from "@mui/material";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { CartContext } from "../../Context/context";
 
 
@@ -8,7 +8,7 @@ const Confirmation = () => {
   const {clearCart} = useContext(CartContext)
   useEffect(() => {
     clearCart()
-  }, [dispatch])
+  }, [])
   
 
   return (

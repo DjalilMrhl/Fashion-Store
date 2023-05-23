@@ -4,11 +4,12 @@ import {Button, Divider, IconButton} from '@mui/material'
 import {Close, Add, Remove } from '@mui/icons-material'
 import { useNavigate } from 'react-router'
 import { CartContext } from '../../Context/context'
+import { useSelector } from 'react-redux'
 
 function CartMenu({cartMenuOpen,setCartMenuOpen, setAuthOpen}) {
 
     const navigate = useNavigate()
-    const {cartItems, cartTotalPrice} = useContext(CartContext)
+    const {cartItems, cartTotalPrice, removefromCart, increaseQuantity, decreaseQuantity} = useContext(CartContext)
     const isLoggedIn = useSelector(state=> state.auth.isLoggedIn)
 
     const handleClick = ()=> {

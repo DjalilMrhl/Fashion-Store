@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./NavBar.scss";
 import { Badge, IconButton } from '@mui/material'
 import {PersonOutline, ShoppingBagOutlined, MenuOutlined, SearchOutlined} from '@mui/icons-material'
 import { Link } from 'react-router-dom'
 import { CartContext } from "../../Context/context";
+import { useSelector } from "react-redux";
 
 function NavBar({setCartMenuOpen, setAuthOpen, setMenuOpen}) {
 
