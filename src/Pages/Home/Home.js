@@ -3,7 +3,7 @@ import "./Home.scss";
 import { NewsLetter, Slider } from "../../Components";
 import { ShoppingList } from "../../Components";
 
-function Home() {
+function Home({products}) {
   useEffect(() => {
     window.scrollTo(0,0)
   }, [])
@@ -11,7 +11,7 @@ function Home() {
     <main className="home" id="home">
       <Slider/>
       <div className="home--container">
-        <ShoppingList/>
+        <ShoppingList products={products}/>
         <NewsLetter/>
       </div>
     </main>

@@ -1,5 +1,5 @@
 import './CartMenu.css'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {Button, Divider, IconButton} from '@mui/material'
 import {Close, Add, Remove } from '@mui/icons-material'
 import { useNavigate } from 'react-router'
@@ -8,9 +8,15 @@ import { useSelector } from 'react-redux'
 
 function CartMenu({cartMenuOpen,setCartMenuOpen, setAuthOpen}) {
 
+    const [cartItems, setcartItems] = useState([])
     const navigate = useNavigate()
-    const {cartItems, cartTotalPrice, removefromCart, increaseQuantity, decreaseQuantity} = useContext(CartContext)
+    const {cartTotalPrice, removefromCart, increaseQuantity, decreaseQuantity} = useContext(CartContext)
+    let {cartItems: cart} = useContext(CartContext)
     const isLoggedIn = useSelector(state=> state.auth.isLoggedIn)
+
+    useEffect(() => {
+      setcartItems(cart)
+    }, [cart])
 
     const handleClick = ()=> {
         if (isLoggedIn) {
@@ -41,10 +47,10 @@ function CartMenu({cartMenuOpen,setCartMenuOpen, setAuthOpen}) {
             <Close onClick={()=> setCartMenuOpen(false)}/>                
         </div>
         <div className="cart-menu--container">
-            {cartItems.map(item=>
-            <div className="card" key={item.id}>
+            {cartItems?.map(item=>
+            <div className="card" key={item?.id}>
                 <IconButton onClick={()=> removefromCart(item)}><Close/></IconButton>
-                <img src={`item.thumbnail`} alt={item.title} />
+                <img src={item.thumbnail} alt={item.title} />
                 <div className="card_content">
                     <h2>{item.title}</h2>
                     <p>{item.description}</p>

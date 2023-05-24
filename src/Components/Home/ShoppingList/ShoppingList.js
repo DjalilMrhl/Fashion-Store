@@ -3,10 +3,10 @@ import "./ShoppingList.scss";
 import { useNavigate } from 'react-router-dom'
 import { Button, Tab, Tabs } from "@mui/material";
 import { Add, Remove } from "@mui/icons-material";
-import {products} from './../../../data'
+// import {products} from './../../../data'
 import { CartContext } from "../../../Context/context";
 
-function ShoppingList() {
+function ShoppingList({products}) {
   const [active, setActive] = useState(0);
   const [filter, setFilter] = useState([]);
   const [cartQuantity, setCartQuantity] = useState(1)
