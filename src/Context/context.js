@@ -8,7 +8,7 @@ export function Context({children}) {
   let cartItems = JSON.parse(localStorage.getItem('cartItems')) || []
   const [cartTotalQuantity, setCartTotalQuantity] = useState(0)
   const [cartTotalPrice, setCartTotalPrice] = useState(0)
-  const [product, setProduct] = useState({})
+  const [product, setProduct] = useState(JSON.parse(localStorage.getItem('cartItems')) || {})
 
 
   const addToCart = (item) => {
