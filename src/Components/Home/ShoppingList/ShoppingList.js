@@ -50,7 +50,7 @@ function ShoppingList({products}) {
                       <img src={item.thumbnail} alt=""/>
                       <span className="view" onClick={()=> {
                         setProduct(item)
-                        localStorage.setItem('cartItems',JSON.stringify(cartItems))
+                        localStorage.setItem('product',JSON.stringify(item))
                         navigate(`/products/${item.id}`)
                       }
                     }>view product</span>
@@ -79,7 +79,7 @@ function ShoppingList({products}) {
                       <img src={item.thumbnail} alt=""/>
                       <span className="view" onClick={()=> {
                         setProduct(item)
-                        localStorage.setItem('cartItems',JSON.stringify(cartItems))
+                        localStorage.setItem('product',JSON.stringify(item))
                         navigate(`/products/${item.id}`)
                       }}>view product</span>
                       <div className="wrapper">
