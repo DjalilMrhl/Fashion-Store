@@ -12,7 +12,7 @@ function ShoppingList({products}) {
   const [cartQuantity, setCartQuantity] = useState(1)
   const [values, setValues] = useState(0)
   const navigate = useNavigate()
-  const {addToCart} = useContext(CartContext)
+  const {addToCart, setProduct} = useContext(CartContext)
 
   const categories = [
     "all",
@@ -48,7 +48,10 @@ function ShoppingList({products}) {
                   <div className="card" key={item.id}>
                     <div className="image">
                       <img src={item.thumbnail} alt=""/>
-                      <span className="view" onClick={()=> navigate(`/products/${item.id}`)}>view product</span>
+                      <span className="view" onClick={()=> {
+                        navigate(`/products/${item.id}`)
+                        setProduct(item)}
+                    }>view product</span>
                       <div className="wrapper">
                         <div className="wrapper">
                           <div className="count">

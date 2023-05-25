@@ -8,6 +8,8 @@ export function Context({children}) {
   let cartItems = JSON.parse(localStorage.getItem('cartItems')) || []
   const [cartTotalQuantity, setCartTotalQuantity] = useState(0)
   const [cartTotalPrice, setCartTotalPrice] = useState(0)
+  const [product, setProduct] = useState({})
+
 
   const addToCart = (item) => {
     // if (cartItems instanceof Array) {
@@ -86,7 +88,7 @@ export function Context({children}) {
 
 
   return (
-    <CartContext.Provider value={{cartItems, cartTotalPrice, cartTotalQuantity, addToCart, increaseQuantity, decreaseQuantity, removefromCart, clearCart}}>
+    <CartContext.Provider value={{product, setProduct, cartItems, cartTotalPrice, cartTotalQuantity, addToCart, increaseQuantity, decreaseQuantity, removefromCart, clearCart}}>
         {children}
     </CartContext.Provider>
   )

@@ -2,25 +2,20 @@ import React, { useContext, useEffect, useState } from 'react'
 import './Product.scss'
 import { Button } from '@mui/material'
 import { Add, Remove } from '@mui/icons-material'
-import { useParams } from 'react-router'
 // import {products} from './../../data'
 import { CartContext } from '../../Context/context'
 
 
 function Product({products}) {
 
-    const {id} = useParams()
-    const [product, setProduct] = useState({})
     const [cartQuantity, setCartQuantity] = useState(1)
-    const {addToCart} = useContext(CartContext)
+    const {addToCart, product} = useContext(CartContext)
 
     useEffect(() => {
       window.scrollTo(0,0)
-      setProduct(products.find(item=> item.id === id))
-      console.log("🚀 ~ file: Product.js:14 ~ Product ~ id:", id)
       console.log("🚀 ~ file: Product.js:20 ~ useEffect ~ product:", product)
       console.log("🚀 ~ file: Product.js:20 ~ useEffect ~ products:", products)
-    }, [product, id, products])
+    }, [product, products])
 
     const handleAddToCart = () => {
       addToCart({...product, cartQuantity})
