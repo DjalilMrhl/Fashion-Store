@@ -80,7 +80,7 @@ export function Context({children}) {
     // localStorage.setItem('cartTotalPrice',JSON.stringify(setCartTotalPrice))
 }
   const clearCart = _ => {
-    cartItems([])
+    cartItems = []
     setCartTotalQuantity(0)
     setCartTotalPrice(0)
     localStorage.clear()
