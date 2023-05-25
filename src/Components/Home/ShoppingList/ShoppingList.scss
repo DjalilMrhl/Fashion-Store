@@ -31,6 +31,9 @@
             grid-template-columns: repeat(auto-fit, 20rem);
             justify-content: center;
             gap: 2rem;
+            &::-webkit-scrollbar {
+                display: none;
+            }
             .card {
                 min-height: 50rem;
                 display: flex;
